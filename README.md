@@ -18,8 +18,7 @@ To download the script, press the green Clone button above. Then press Download 
 First install python and toward the end of the installer there will be an option to add python to PATH. MAKE SURE TO ENABLE IT
 
 2) 
-Now open command prompt by pressing windowskey+x and clicking windows powershell or by searching cmd in the bottom left
-once its open type 
+Now open command prompt by pressing windowskey+x and clicking windows powershell or by searching cmd in the bottom left and opening it. Once its open type 
 
 "pip install selenium"
 

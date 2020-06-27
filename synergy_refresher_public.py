@@ -1,8 +1,7 @@
 #Synergy Refresher by Reece Griffith
-#The capabilities for the script to log into CTAS also exist, but they are commented out because it's not as useful.
 #Future updates to include a GUI and system notification on record detection.
 #Future update where it refreshes as soon as the button appears is also easily possible but it's set to click every 2 seconds for now.
-#Currently the script logs into synergy and constantly checks for cases. When a case is detected the script will play a sound and stop.
+#Currently the script logs into synergy and CTAS and constantly checks for cases. When a case is detected the script will play a sound and stop.
 
 
 
@@ -19,11 +18,11 @@ import windsound
 synergy_url = "https://ttt3.callscripter.com/"
 synergy_username = "replace this text with your synergy username"
 synergy_password = "replace this text with your synergy password"
-#ctas_userame = "replace this text with your ctas username"
-#ctas_password = "replace this text with your ctas password"
-#ctas_url = "https://contact-tracing-staff.phe.gov.uk/staff/sign_in"
-
-def alert():
+ctas_userame = "replace this text with your ctas username"
+ctas_password = "replace this text with your ctas password"
+ctas_url = "https://contact-tracing-staff.phe.gov.uk/staff/sign_in"
+    
+def alert():                                                        #plays the alert.wav sound thrice. To change to once or twice delete two or one of these lines, respectively.
     winsound.PlaySound('alert.wav', winsound.SND_FILENAME)
     winsound.PlaySound('alert.wav', winsound.SND_FILENAME)
     winsound.PlaySound('alert.wav', winsound.SND_FILENAME)
@@ -52,7 +51,6 @@ def start_tracing():
 
 
 def back():
-    #synergy_driver.find_element_by_css_selector("#backToCampaignsBtn").click()  #clicks back
     iframe = synergy_driver.find_element(By.CSS_SELECTOR, "#ifFrontpage")
     synergy_driver.switch_to.frame(iframe)
     records_text = synergy_driver.find_element(By.CSS_SELECTOR, "div.CSGroup:nth-child(3)").text
@@ -62,17 +60,17 @@ def back():
         return
     else:
         alert()
-        sys.exit("You probably have a record.")                                                         #if a record is there the script stops
+        sys.exit("You probably have a record.")                                                         #if a record is there the script plays a sound and stops
 
 if __name__ == "__main__":
     synergy_driver = webdriver.Firefox()    #starts a browser for synergy
-    #ctas_driver = webdriver.Firefox()       #starts a browser for ctas (disabled for now. no real use for it)
+    ctas_driver = webdriver.Firefox()       #starts a browser for ctas 
     
     synergy_driver.get(synergy_url)         #loads synergy
-    #ctas_driver.get(ctas_url)               #loads ctas (disabled for now. no real use for it)
+    ctas_driver.get(ctas_url)               #loads ctas 
     
     Login_to_Synergy(synergy_username, synergy_password)    #logs into synergy
-    #Login_to_CTAS(ctas_userame, ctas_password)              #logs into ctas (disabled for now. no real use for it)
+    Login_to_CTAS(ctas_userame, ctas_password)              #logs into ctas
     time.sleep(2)
     
     

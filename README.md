@@ -80,3 +80,5 @@ Future updates will probably included a sound playing and a notification when a 
 Enjoy!!
 
 -Reece
+
+PS. Any issues post them on the issues section and I'll do my best

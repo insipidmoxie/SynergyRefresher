@@ -18,8 +18,8 @@ First install python and toward the end of the installer there will be an option
 2) 
 Now open command prompt by pressing windowskey+x and clicking windows powershell or by searching cmd in the bottom left
 once its open type 
-pip install selenium
-into it and press enter
+"pip install selenium"
+into it (without the quotation marks) and press enter
 
 It should install the selenium module. You might get a warning about pip version but ignore it. 
 If you get an error alone the lines of "no such command as pip" you should find where python is installed (default is usually C:\Python38\)

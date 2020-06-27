@@ -20,14 +20,22 @@ First install python and toward the end of the installer there will be an option
 2) 
 Now open command prompt by pressing windowskey+x and clicking windows powershell or by searching cmd in the bottom left
 once its open type 
+
 "pip install selenium"
+
 into it (without the quotation marks) and press enter
 
 It should install the selenium module. You might get a warning about pip version but ignore it. 
 If you get an error alone the lines of "no such command as pip" you should find where python is installed (default is usually C:\Python38\)
 Then open command prompt and type 
-setx PATH "%PATH%;C:\Path\To\Python"  For example, the default would be setx PATH "%PATH%;C:\Python38\Scripts"
-You will only have to do this if you forgot to enable adding python to PATH during installation. Alteratively reinstall python and make sure to enable the setting
+
+setx PATH "%PATH%;C:\Path\To\Python"  
+
+For example, the default would be 
+
+setx PATH "%PATH%;C:\Python38\Scripts"
+
+You will only have to do this if you forgot to enable adding python to PATH during installation. Alteratively reinstall python and make sure to enable the setting.
 
 3) 
 Next find the path to where you downloaded the geckodriver file, for example to C:\Users\YourName\Downloads\SynergyRefresher

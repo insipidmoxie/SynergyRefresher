@@ -12,7 +12,7 @@ https://www.mozilla.org/en-GB/firefox/new/
 You'll need these 3 things in addition to the script: Python to run the script, Firefox to open synergy and geckodriver to let firefox work with the script.
 The python version to download will be 3.8.3 (the latest one) and you'll want to download the 64 bit executable installer.
 
-To download the script, press the green Clone button above. Then press Download Zip and extract the Zip file once it's downloaded.
+To download the script, press the green Clone button above. Then press Download Zip and extract the Zip file once it's downloaded. Suggestions to improve the script or help with issues feel free to email reece.griffith@intelling.co.uk or open an issue on Github.
 
 1) 
 First install python and toward the end of the installer there will be an option to add python to PATH. MAKE SURE TO ENABLE IT

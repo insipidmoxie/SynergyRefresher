@@ -13,6 +13,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 import time
 import sys
+import windsound
 
 
 synergy_url = "https://ttt3.callscripter.com/"
@@ -22,6 +23,11 @@ synergy_password = "replace this text with your synergy password"
 #ctas_password = "replace this text with your ctas password"
 #ctas_url = "https://contact-tracing-staff.phe.gov.uk/staff/sign_in"
 
+def alert():
+    winsound.PlaySound('alert.wav', winsound.SND_FILENAME)
+    winsound.PlaySound('alert.wav', winsound.SND_FILENAME)
+    winsound.PlaySound('alert.wav', winsound.SND_FILENAME)
+    return
 
 def Login_to_Synergy(username, password):
     synergy_driver.find_element(By.CSS_SELECTOR,"#txtUsername").send_keys(username + Keys.TAB)      #enters username
@@ -55,6 +61,7 @@ def back():
         synergy_driver.switch_to.default_content()
         return
     else:
+        alert()
         sys.exit("You probably have a record.")                                                         #if a record is there the script stops
 
 if __name__ == "__main__":

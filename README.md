@@ -9,7 +9,7 @@ https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.
 
 https://www.mozilla.org/en-GB/firefox/new/
 
-You'll need these 3 things in addition to the scrip:, Python to run the script, Firefox to open synergy and geckodriver to let firefox work with the script.
+You'll need these 3 things in addition to the script: Python to run the script, Firefox to open synergy and geckodriver to let firefox work with the script.
 The python version to download will be 3.8.3 (the latest one) and you'll want to download the 64 bit executable installer.
 
 1) 

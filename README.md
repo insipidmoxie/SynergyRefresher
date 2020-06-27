@@ -37,7 +37,7 @@ setx PATH "%PATH%;C:\Python38\Scripts"
 You will only have to do this if you forgot to enable adding python to PATH during installation. Alteratively reinstall python and make sure to enable the setting.
 
 3) 
-Next find the path to where you downloaded the geckodriver file, for example to C:\Users\YourName\Downloads\SynergyRefresher
+Next find the path to where you downloaded the geckodriver file, for example to C:\Users\YourName\Downloads\geckodriver-master
 
 There are two options for this next step.
 
@@ -45,7 +45,12 @@ Option1:
 
 Open command prompt again and write 
 
-setx PATH "%PATH%;C:\Users\YourName\Downloads\SynergyRefresher"
+setx PATH "%PATH%;C:\Path\To\Geckodriver\Folder"
+
+Using the previous example this would be
+
+setx PATH "%PATH%;C:\Users\YourName\Downloads\geckodriver-master"
+
 
 Option2:
 

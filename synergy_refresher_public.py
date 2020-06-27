@@ -38,8 +38,6 @@ def Login_to_CTAS(username, password):
 def start_tracing():
     iframe = synergy_driver.find_element(By.CSS_SELECTOR, "#ifFrontpage")                           
     synergy_driver.switch_to.frame(iframe)
-    """iframe2 = synergy_driver.find_element(By.ID, "mainbody")
-    synergy_driver.switch_to.frame(iframe2)"""
     iframe3 = synergy_driver.find_element(By.CSS_SELECTOR, ".stack-fill > iframe:nth-child(1)")
     synergy_driver.switch_to.frame(iframe3)
     synergy_driver.find_element(By.TAG_NAME, "button").click()                                          #clicks start tracing
@@ -71,11 +69,11 @@ if __name__ == "__main__":
     time.sleep(2)
     
     
-    while(1):
-        start_tracing()
-        time.sleep(2)
-        back()
-        time.sleep(2)
+    while(1):                   #repeats the following until stopped:
+        start_tracing()         #hits start tracing
+        time.sleep(2)           #waits 2 seconds
+        back()                  #hits back if no case
+        time.sleep(2)           #waits 2 seconds
         
 
 

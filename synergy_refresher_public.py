@@ -1,8 +1,8 @@
 #Synergy Refresher by Reece Griffith
 #The capabilities for the script to log into CTAS also exist, but they are commented out because it's not as useful.
-#Future updates to include a GUI, sound play on record detection, system notification on record detection.
+#Future updates to include a GUI and system notification on record detection.
 #Future update where it refreshes as soon as the button appears is also easily possible but it's set to click every 2 seconds for now.
-
+#Currently the script logs into synergy and constantly checks for cases. When a case is detected the script will play a sound and stop.
 
 
 

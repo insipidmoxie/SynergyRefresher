@@ -30,11 +30,16 @@ You will only have to do this if you forgot to enable adding python to PATH duri
 3) 
 Next find the path to where you downloaded the geckodriver file, for example to C:\Users\YourName\Downloads\SynergyRefresher
 
-There are two options for this next step
+There are two options for this next step.
+
 Option1:
+
 Open command prompt again and write 
+
 setx PATH "%PATH%;C:\Users\YourName\Downloads\SynergyRefresher"
+
 Option2:
+
 In the search bar in the bottom left type "edit the system environment variables" and hit enter.
 In the bottom right of the window that comes up, just above the apply button there will be an "Environment Variables" button. Click it
 A new window will come up.
@@ -46,20 +51,21 @@ Press okay
 
 4) 
 Almost there!
-Right click on the synergy_refresher_2.py file and click Edit with IDLE
-At the top there will be text that says 'replace this text with your synergy username' and the same with the password
-Replace it with your username and password (the username is the intelling email), leaving the quotation marks intact
+Right click on the synergy_refresher_2.py file and click Edit with IDLE.
+
+At the top there will be text that says 'replace this text with your synergy username' and the same with the password. Replace it with your username and password (the username is the intelling email), leaving the quotation marks intact.
+
 After this you should be good to press run -> run module and you are DONE!
 
 NOTE:
-Do NOT minimise the browser as it will stop the script. You can, however, do whatever you want over the top of it as long as
-it's not minimised.
-When you get a case it'll just stop and print a message saying "You probably have a record". You can either open a new tab
-and log into CTAS and do it that way or log into synergy and CTAS on your preferred browser. Really doesn't matter.
+
+Do NOT minimise the browser as it will stop the script. You can, however, do whatever you want over the top of it as long as it's not minimised.
+
+When you get a case it'll just stop and print a message saying "You probably have a record". You can either open a new tab and log into CTAS and do it that way or log into synergy and CTAS on your preferred browser. Really doesn't matter.
+
 If you each time you stop and start the script it'll open a new firefox window. Just close the previous one.
 
-Future updates will probably included a sound playing and a notification when a record is found and a graphical interface to
-enter your synergy details into to avoid editing the script.
+Future updates will probably included a sound playing and a notification when a record is found and a graphical interface to enter your synergy details into to avoid editing the script.
 
 Enjoy!!
 

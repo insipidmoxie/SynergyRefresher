@@ -17,14 +17,14 @@ To download the script, press the green Clone button above. Then press Download 
 Suggestions to improve the script or help with issues feel free to email reece.griffith@intelling.co.uk or open an issue on Github.
 
 1) 
-First install python and toward the end of the installer there will be an option to add python to PATH. MAKE SURE TO ENABLE IT
+First install python and toward the end of the installer there will be an option to add python to PATH. MAKE SURE TO ENABLE IT. After that install Firefox if you haven't already.
 
 2) 
 Now open command prompt by pressing windowskey+x and clicking windows powershell or by searching cmd in the bottom left and opening it. Once its open type 
 
-"pip install selenium"
+pip install selenium
 
-into it (without the quotation marks) and press enter
+into it and press enter
 
 It should install the selenium module. You might get a warning about pip version but ignore it. 
 If you get an error alone the lines of "no such command as pip" you should find where python is installed (default is usually C:\Python38\)
@@ -39,6 +39,7 @@ setx PATH "%PATH%;C:\Python38\Scripts"
 You will only have to do this if you forgot to enable adding python to PATH during installation. Alteratively reinstall python and make sure to enable the setting.
 
 3) 
+
 Next find the path to where you downloaded the geckodriver file, for example to C:\Users\YourName\Downloads\geckodriver-master
 
 There are two options for this next step.
@@ -67,9 +68,9 @@ Press okay
 
 4) 
 Almost there!
-Right click on the synergy_refresher_2.py file and click Edit with IDLE.
+Right click on the synergy_refresher_public.py file and click Edit with IDLE.
 
-At the top there will be text that says 'replace this text with your synergy username' and the same with the password. Replace it with your username and password (the username is the intelling email), leaving the quotation marks intact.
+Near the top (lines 18-21) there will be text that says 'replace this text with your synergy username' and the same with the password. Replace it with your username and password (the username is the intelling email), LEAVING THE QUATATION MARKS INTACT.
 
 After this you should be good to press run -> run module and you are DONE!
 
@@ -77,14 +78,14 @@ NOTE:
 
 Do NOT minimise the browser as it will stop the script. You can, however, do whatever you want over the top of it as long as it's not minimised.
 
-When you get a case it'll just stop and print a message saying "You probably have a record". You can either open a new tab and log into CTAS and do it that way or log into synergy and CTAS on your preferred browser. Really doesn't matter.
+When you get a case it'll just play a sound, print a message saying "You probably have a record" and then stop.
 
-If you each time you stop and start the script it'll open a new firefox window. Just close the previous one.
+Each time you stop and start the script it'll open a new firefox window. Just close the previous one. I hope to add a GUI with a pause/resume button in the future to avoid having to close and open browsers constantly.
 
-Future updates will probably included a sound playing and a notification when a record is found and a graphical interface to enter your synergy details into to avoid editing the script.
+Future updates will probably included a windows system notification when a record is found and a graphical interface.
 
 Enjoy!!
 
 -Reece
 
-PS. Any issues post them on the issues section and I'll do my best
+PS. Any issues post them on the issues section or email me and I'll do my best

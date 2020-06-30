@@ -57,6 +57,7 @@ def Login_to_Synergy(username, password):
     return
 
 def Login_to_CTAS(username, password):
+    driver.switch_to.window(driver.window_handles[1])
     driver.find_element(By.CSS_SELECTOR, "#staff-member-email-field").send_keys(username + Keys.TAB)       #enters username
     driver.find_element(By.CSS_SELECTOR, "#staff-member-password-field").send_keys(password + Keys.ENTER)  #enters password
     return

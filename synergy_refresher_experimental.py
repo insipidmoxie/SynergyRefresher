@@ -1,7 +1,8 @@
 #Synergy Refresher by Reece Griffith
-#Future updates to include a GUI with pause&resume buttons and windows notification on record detection.
 #Future update where it refreshes as soon as the button appears is also easily possible but it's set to click every 2 seconds for now.
-#Currently the script logs into synergy and CTAS and constantly checks for cases. When a case is detected the script will play a sound and stop.
+#Currently the script logs into synergy and CTAS and constantly checks for cases. When a case is detected the script will play a sound, give a notification and stop.
+#Feel free to email or message improvement suggestions.
+#Next improvement will probably be a dropdown to change how many times the alert plays.
 
 
 
@@ -97,27 +98,27 @@ def run():
             time.sleep(2)                                       #waits 2 seconds  
             if switch == False:  
                  break
-     thread = threading.Thread(target=refresh)  
+     thread = threading.Thread(target=refresh)                  #initialises another thread to run refresh function concurrently with GUI mainloop
      thread.start()  
      
-def switchon():    
+def switchon():                                                 #function governing the Resume switch functionality
      global switch  
      global onbutton
      global offbutton
      switch = True  
      print('Starting')
-     onbutton["state"] = "disabled"
-     offbutton["state"] = "active"
-     run()
+     onbutton["state"] = "disabled"                              #greys out the on button once its pressed
+     offbutton["state"] = "active"                               #makes the off button available to be pressed
+     run()                                                       #calls the main run/refresh functions.
 
 def switchoff():    
      print('Pausing')
      global onbutton
      global offbutton
      global switch  
-     onbutton["state"] = "active"
-     offbutton["state"] = "disabled"
-     switch = False
+     onbutton["state"] = "active"                               #greys out the off button once its pressed
+     offbutton["state"] = "disabled"                            #makes the on button available to be pressed      
+     switch = False                                             #sets switch variable to off
 
 def kill():    
      print('Exiting program.')
@@ -125,8 +126,8 @@ def kill():
      driver.quit()
 
 if __name__ == "__main__":                                  #main loop
-    switch = True  
-    root = tk.Tk()  
+    switch = True                                   
+    root = tk.Tk()                                          #initialises GUI
     print('Initialising')
     
     driver = webdriver.Firefox()                            #starts a browser for synergy

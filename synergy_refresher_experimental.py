@@ -39,6 +39,7 @@ synergy_url = "https://ttt3.callscripter.com/"
 
 def open_CTAS_tab():                                                #opens a tab for CTAS
     driver.execute_script("window.open('{}')".format(ctas_url))
+    driver.switch_to.window(driver.window_handles[1])
     return
 
 def focus_synergy_tab():                                            #switches to the synergy tab

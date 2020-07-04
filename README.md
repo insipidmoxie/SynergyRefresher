@@ -15,18 +15,11 @@ The python version to download will be 3.8.3 (the latest one) and you'll want to
 
 To download the script, press the green Clone button above. Then press Download Zip and extract the Zip file once it's downloaded. To extract simply right click on the downloaded file and press extract.
 
-Once you have extracted the folder, run the setPath.bat file. You don't need to run geckodriver.exe
-
 
 1) 
 First download the python installer and run it. At the start of the installer there will be an option to add python to PATH. MAKE SURE TO ENABLE IT then continue installing python. After that install Firefox if you haven't already.
 
 2) 
-Two options for this next step!
-
-Option 1: Run the installSelenium.bat file
-
-Option 2:
 
 Open command prompt by pressing windowskey+x and clicking windows powershell or by searching cmd in the bottom left and opening it. Once its open type 
 

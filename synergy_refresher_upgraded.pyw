@@ -84,6 +84,7 @@ def back():
         driver.switch_to.default_content()
         return
     else:
+        driver.switch_to.default_content()
         switchoff()
         alert()
         messagebox.showinfo("Synergy Refresher", "A record has been detected. Hopefully.")      #if a record is there the script plays a sound and stops

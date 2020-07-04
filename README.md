@@ -15,7 +15,7 @@ The python version to download will be 3.8.3 (the latest one) and you'll want to
 
 To download the script, press the green Clone button above. Then press Download Zip and extract the Zip file once it's downloaded. To extract simply right click on the downloaded file and press extract.
 
-Once you have extracted the folder, run the setPath.bat file.
+Once you have extracted the folder, run the setPath.bat file. You don't need to run geckodriver.exe
 
 
 1) 

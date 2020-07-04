@@ -17,7 +17,7 @@ To download the script, press the green Clone button above. Then press Download 
 Suggestions to improve the script or help with issues feel free to email reece.griffith@intelling.co.uk or open an issue on Github.
 
 1) 
-First install python and toward the end of the installer there will be an option to add python to PATH. MAKE SURE TO ENABLE IT. After that install Firefox if you haven't already.
+First download the python installer and run it. At the start of the installer there will be an option to add python to PATH. MAKE SURE TO ENABLE IT then continue installing python. After that install Firefox if you haven't already.
 
 2) 
 Now open command prompt by pressing windowskey+x and clicking windows powershell or by searching cmd in the bottom left and opening it. Once its open type 

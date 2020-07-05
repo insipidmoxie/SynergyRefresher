@@ -32,6 +32,11 @@ Near the top (lines 18-21) there will be text that says 'replace this text with 
 
 After this you should be good to press run -> run module and you are DONE! Easy peasy.
 
+
+
+
+
+
 NOTE:
 
 Do NOT minimise the browser as it will stop the script. You can, however, do whatever you want over the top of it as long as it's not minimised.

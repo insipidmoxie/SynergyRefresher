@@ -21,33 +21,9 @@ First download the python installer and run it. At the start of the installer th
 
 2) 
 
-Either run the installSelenium.bat file or do the following:
+Run the InstallSeleniumandSetPath.bat file to install selenium and set PATH to geckodriver. You cannot do this before installing python and enabling python being added to PATH or you will get an error.
 
-Open command prompt by pressing windowskey+x and clicking windows powershell or by searching cmd in the bottom left and opening it. Once its open type 
-
-pip install selenium
-
-into it and press enter
-
-It should install the selenium module. If it works go straight to step 3. You might get a warning about pip version but ignore it. 
-
-If you get an error alone the lines of "no such command as pip" you should find where python is installed (default is usually C:\Python38\)
-Then open command prompt and type 
-
-setx PATH "%PATH%;C:\Path\To\Python"  
-
-For example, the default would be 
-
-setx PATH "%PATH%;C:\Python38\Scripts"
-
-You will only have to do this if you forgot to enable adding python to PATH during installation. Alteratively reinstall python and make sure to enable the setting.
-
-3) 
-
-... Rewording for clarity. Will be back soon! in the meantime edit the path to include the extracted folder you downloaded which contains geckodriver. For example in command prompt type setx PATH "%PATH%;C:\Users\YourUserName\Downloads\SynergyRefresher-master\" if thats where your you extracted it to. Either that or type "Edit the system environment variables" in the bottom left, go onto the first option, click "Environment variables" then click Path and Edit. Then presss new and paste in the location of the geckodriver.exe file, such as C:\Users\YourUserName\Downloads\SynergyRefresher-master\ or even C:\Users\YourUserName\Downloads\SynergyRefresher-master\SynergyRefresher-master\ depending on how you extracted it.
-
-
-4)
+3)
 Almost there!
 
 Right click on the synergy_refresher_public.py file and click Edit with IDLE.

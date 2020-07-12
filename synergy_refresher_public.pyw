@@ -105,7 +105,7 @@ def back():
         switchoff()
         alert()
         messagebox.showinfo("Synergy Refresher", "A record has been detected. Hopefully.")
-    except (NoSuchElementException, TimeoutException):
+    except (TimeoutException):
         messagebox.showerror("Synergy Refresher", "Could not locate records or text within 20 seconds. Resume when loaded.")
         switchoff()
     

@@ -24,7 +24,8 @@ synergy_username = "replace this text with your synergy username" #PLEASE ENTER 
 synergy_password = "replace this text with your synergy password" #PLEASE ENTER YOUR SYNERGY PASSWORD BETWEEN THESE QUOTATION MARKS
 ctas_userame = "replace this text with your ctas username"        #PLEASE ENTER YOUR CTAS USERNAME BETWEEN THESE QUOTATION MARKS
 ctas_password = "replace this text with your ctas password"       #PLEASE ENTER YOUR CTAS PASSWORD BETWEEN THESE QUOTATION MARKS
-seconds_between_clicks = 2                                        #ENTER HOW LONG TO WAIT BETWEEN CLICKS BY EDITING THIS VALUE
+
+seconds_between_clicks = 2                                      #ENTER THE MINIMUM AMOUNT OF SECONDS TO ELAPSE BETWEEN CLICKS
 
 
 
@@ -38,7 +39,6 @@ seconds_between_clicks = 2                                        #ENTER HOW LON
 
 ctas_url = "https://contact-tracing-staff.phe.gov.uk/staff/sign_in"
 synergy_url = "https://ttt3.callscripter.com/"
-
 
 
 def open_CTAS_tab():                                                #opens a tab for CTAS
@@ -74,14 +74,15 @@ def start_tracing():
     driver.switch_to.frame(iframe)
     iframe3 = driver.find_element(By.CSS_SELECTOR, ".stack-fill > iframe:nth-child(1)")
     driver.switch_to.frame(iframe3)
-    trace_button = driver.find_element(By.TAG_NAME, "button")
     try:
-        WebDriverWait(driver,20).until(cond.visibility_of(trace_button))
-        trace_button.click()                                          #clicks start tracing
-        driver.switch_to.default_content()
+        WebDriverWait(driver,20).until(cond.presence_of_element_located((By.TAG_NAME, "button")))
     except (NoSuchElementException, TimeoutException):
         messagebox.showerror("Synergy Refresher", "Could not locate the button within 20 seconds. Resume when loaded.")
         switchoff()
+    else:
+        trace_button = driver.find_element(By.TAG_NAME, "button")
+        trace_button.click()                                                    #clicks start tracing
+        driver.switch_to.default_content()
     return
 
 
@@ -89,9 +90,17 @@ def back():
     global switch
     iframe = driver.find_element(By.CSS_SELECTOR, "#ifFrontpage")
     driver.switch_to.frame(iframe)                                                              #focuses on frame so it can see the page
-    records_element = driver.find_element(By.CSS_SELECTOR, "div.CSGroup:nth-child(3)")
     try:
-        WebDriverWait(driver,20).until(cond.visibility_of(records_element))
+        WebDriverWait(driver,20).until(cond.element_to_be_clickable((By.CSS_SELECTOR, "div.CSGroup:nth-child(3)")))
+    except NoSuchElementException:
+        switchoff()
+        alert()
+        messagebox.showinfo("Synergy Refresher", "A record has been detected. Hopefully.")      #if a record is there the script plays a sound and stops
+    except TimeoutException:
+        messagebox.showerror("Synergy Refresher", "Could not locate the button within 20 seconds. Resume when loaded.")
+        switchoff()
+    else:
+        records_element = driver.find_element(By.CSS_SELECTOR, "div.CSGroup:nth-child(3)")
         records_text = records_element.text
         if "no available records for you" in records_text:                                          #checks if there are no records
             driver.find_element(By.CSS_SELECTOR, "#backToCampaignsBtn").click()                     #if no records click back
@@ -101,22 +110,16 @@ def back():
             switchoff()
             alert()
             messagebox.showinfo("Synergy Refresher", "A record has been detected. Hopefully.")      #if a record is there the script plays a sound and stops
-    except (NoSuchElementException):
-        switchoff()
-        alert()
-        messagebox.showinfo("Synergy Refresher", "A record has been detected. Hopefully.")
-    except (TimeoutException):
-        messagebox.showerror("Synergy Refresher", "Could not locate records or text within 20 seconds. Resume when loaded.")
-        switchoff()
+
     
 def run():  
      def refresh():
          print('Preparing to refresh')
          while (switch == True):  
             start_tracing()                                     #hits start tracing
-            time.sleep(seconds_between_clicks)                                       #waits some amount of seconds
+            time.sleep(seconds_between_clicks)                                       #waits 2 seconds
             back()                                              #hits back if no case
-            time.sleep(seconds_between_clicks)                                       #waits some amount of seconds
+            time.sleep(seconds_between_clicks)                                       #waits 2 seconds  
             if switch == False:  
                  break
      thread = threading.Thread(target=refresh)                  #initialises another thread to run refresh function concurrently with GUI mainloop
@@ -170,4 +173,4 @@ if __name__ == "__main__":                                  #main loop
     killbutton.config(height = 2, width=10)
     killbutton.pack(padx=50,pady=12)    
     
-    root.mainloop()                                                             #opens GUI t
+    root.mainloop()                                                             #opens GUI to run main program

@@ -25,7 +25,7 @@ synergy_password = "replace this text with your synergy password" #PLEASE ENTER 
 ctas_userame = "replace this text with your ctas username"        #PLEASE ENTER YOUR CTAS USERNAME BETWEEN THESE QUOTATION MARKS
 ctas_password = "replace this text with your ctas password"       #PLEASE ENTER YOUR CTAS PASSWORD BETWEEN THESE QUOTATION MARKS
 
-seconds_between_clicks = 1                                      #ENTER THE MINIMUM AMOUNT OF SECONDS TO ELAPSE BETWEEN CLICKS
+seconds_between_clicks = 2                                      #ENTER THE MINIMUM AMOUNT OF SECONDS TO ELAPSE BETWEEN CLICKS
 
 
 

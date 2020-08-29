@@ -18,6 +18,7 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import TimeoutException
 import time
 import winsound
+import random
 
 
 synergy_username = "replace this text with your synergy username" #PLEASE ENTER YOUR SYNERGY USERNAME BETWEEN THESE QUOTATION MARKS
@@ -117,9 +118,13 @@ def run():
          print('Preparing to refresh')
          while (switch == True):  
             start_tracing()                                     #hits start tracing
-            time.sleep(seconds_between_clicks)                                       #waits 2 seconds
+            upper_limit = seconds_between_clicks + (seconds_between_clicks * 0.3)
+            lower_limit = seconds_between_clicks - (seconds_between_clicks * 0.3)
+            sleep_time = random.uniform(lower_limit,upper_limit)
+            time.sleep(sleep_time)                                       #waits 2 seconds
             back()                                              #hits back if no case
-            time.sleep(seconds_between_clicks)                                       #waits 2 seconds  
+            sleep_time = random.uniform(lower_limit,upper_limit)
+            time.sleep(sleep_time)         
             if switch == False:  
                  break
      thread = threading.Thread(target=refresh)                  #initialises another thread to run refresh function concurrently with GUI mainloop

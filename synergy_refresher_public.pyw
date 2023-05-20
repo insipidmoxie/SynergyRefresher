@@ -1,6 +1,4 @@
 #Synergy Refresher by Reece Griffith
-#Future updates to include a GUI with pause&resume buttons and windows notification on record detection.
-#Future update where it refreshes as soon as the button appears is also easily possible but it's set to click every 2 seconds for now.
 #Currently the script logs into synergy and CTAS and constantly checks for cases. When a case is detected the script will play a sound and stop.
 
 
